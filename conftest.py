@@ -1,5 +1,7 @@
 import pytest
+import os
 from selenium import webdriver
+from selenium.webdriver.firefox.service import Service
 
 
 def pytest_addoption(parser):
@@ -16,7 +18,10 @@ def browser(request):
         browser = webdriver.Chrome()
         print("[INFO] start Chrome for test")
     elif browser_name == "firefox":
-        browser = webdriver.Firefox()
+        current_dir = os.path.abspath(os.path.dirname(__file__))
+        geckodriver = os.path.join(current_dir, "drivers/geckodriver")
+        service = Service(geckodriver)
+        browser = webdriver.Firefox(service=service)
         print("[INFO] start Firefox for test")
     else:
         raise pytest.UsageError("[ERROR] --browser should be chrome or firefox")
