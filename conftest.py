@@ -1,30 +1,13 @@
 import pytest
 import os
 from selenium import webdriver
-from selenium.webdriver.firefox.service import Service
-
-
-def pytest_addoption(parser):
-    parser.addoption('--browser', action='store', default='firefox',
-                     help="Choose brower: chrome or firefox")
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
 @pytest.fixture(scope="function")
 def browser(request):
-    browser_name = request.config.getoption('browser')
-    browser = None
-
-    if browser_name == "chrome":
-        browser = webdriver.Chrome()
-        print("[INFO] start Chrome for test")
-    elif browser_name == "firefox":
-        current_dir = os.path.abspath(os.path.dirname(__file__))
-        geckodriver = os.path.join(current_dir, "drivers/geckodriver")
-        service = Service(geckodriver)
-        browser = webdriver.Firefox(service=service)
-        print("[INFO] start Firefox for test")
-    else:
-        raise pytest.UsageError("[ERROR] --browser should be chrome or firefox")
+    browser = webdriver.Remote('http://selenium:4444/wd/hub', desired_capabilities=DesiredCapabilities.CHROME)
+    print("[INFO] start Chrome for test")
 
     yield browser
     print("[INFO] quite browser")
