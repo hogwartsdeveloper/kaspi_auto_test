@@ -5,7 +5,7 @@ from pages.resourses.locators import MainPageLocators
 class MainPage(BasePage):
     def __init__(self, browser, url):
         super().__init__(browser, url)
-        self.confirm_region = None
+        self.confirm_region_title = None
 
     def should_be_main_page(self):
         self.should_be_kaspi_shop()
@@ -29,7 +29,7 @@ class MainPage(BasePage):
         assert self.is_element_present(*MainPageLocators.KASPI_GUIDE_BLOCK), \
             "Kaspi guide block is not present"
 
-    def should_be_region_confirm_modal_window(self):
+    def should_be_confirm_region_modal_window(self):
         assert self.is_element_present(*MainPageLocators.TITLE_REGION_CONFIRM), \
             "Region confirm modal window is not present"
 
@@ -44,13 +44,13 @@ class MainPage(BasePage):
     def get_confirm_region(self):
         title_region = self.browser.find_element(*MainPageLocators.TITLE_REGION_CONFIRM)
         region = title_region.text[10:-1]
-        self.confirm_region = region
+        self.confirm_region_title = region
 
     def should_be_selected_region(self):
         selected_region = self.browser.find_element(*MainPageLocators.REGION)
 
-        assert self.confirm_region == selected_region, \
-            f"Wrong region, got {selected_region} instead of {self.confirm_region}"
+        assert self.confirm_region_title == selected_region.text, \
+            f"Wrong region, got {selected_region.text} instead of {self.confirm_region_title}"
 
     def should_not_be_selected_region(self):
         assert self.is_not_element_present(*MainPageLocators.REGION), \
