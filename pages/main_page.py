@@ -3,6 +3,10 @@ from pages.resourses.locators import MainPageLocators
 
 
 class MainPage(BasePage):
+    def __init__(self, browser, url):
+        super().__init__(browser, url)
+        self.confirm_region = None
+
     def should_be_main_page(self):
         self.should_be_kaspi_shop()
         self.should_be_kaspi_payments()
@@ -24,3 +28,30 @@ class MainPage(BasePage):
     def should_be_kaspi_guide_block(self):
         assert self.is_element_present(*MainPageLocators.KASPI_GUIDE_BLOCK), \
             "Kaspi guide block is not present"
+
+    def should_be_region_confirm_modal_window(self):
+        assert self.is_element_present(*MainPageLocators.TITLE_REGION_CONFIRM), \
+            "Region confirm modal window is not present"
+
+    def confirm_region(self):
+        button = self.browser.find_element(*MainPageLocators.BUTTON_REGION_CONFIRM)
+        button.click()
+
+    def not_confirm_region(self):
+        button = self.browser.find_element(*MainPageLocators.BUTTON_REGION_NOT_CONFIRM)
+        button.click()
+
+    def get_confirm_region(self):
+        title_region = self.browser.find_element(*MainPageLocators.TITLE_REGION_CONFIRM)
+        region = title_region.text[10:-1]
+        self.confirm_region = region
+
+    def should_be_selected_region(self):
+        selected_region = self.browser.find_element(*MainPageLocators.REGION)
+
+        assert self.confirm_region == selected_region, \
+            f"Wrong region, got {selected_region} instead of {self.confirm_region}"
+
+    def should_not_be_selected_region(self):
+        assert self.is_not_element_present(*MainPageLocators.REGION), \
+            "Selected region is present"
