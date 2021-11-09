@@ -4,7 +4,7 @@ services:
   selenium:
     image: selenium/standalone-chrome
     ports:
-      - "4444:4444"
+      - 4444:4444
     restart: always
 
   app:
@@ -12,6 +12,6 @@ services:
       context: .
     volumes:
       - ./app:/app
-    command: sh -c pytest -v -alluredir results
+    command: sh -c "pytest --alluredir results"
     depends_on:
       - selenium

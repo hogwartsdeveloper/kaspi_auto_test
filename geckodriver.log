@@ -1,0 +1,50 @@
+1636421760161	geckodriver	INFO	Listening on 127.0.0.1:58007
+1636421760167	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "56183" "-no-remote" "-profile" "/tmp/rust_mozprofile6nnm3K"
+[GFX1-]: glxtest: libEGL initialize failed
+[GFX1-]: glxtest: X error, error_code=2, request_code=151, minor_code=3
+[GFX1-]: glxtest: process failed (exited with status 1)
+1636421761033	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofile6nnm3K/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56183/devtools/browser/dd90dba3-f900-45ef-b953-50abed918be1
+1636421762299	Marionette	INFO	Listening on port 39049
+1636421762392	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1636421768003	Marionette	INFO	Stopped listening on port 39049
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1636421768527	geckodriver	INFO	Listening on 127.0.0.1:54225
+1636421769037	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "59341" "-no-remote" "-profile" "/tmp/rust_mozprofileAUu1u3"
+[GFX1-]: glxtest: libEGL initialize failed
+[GFX1-]: glxtest: X error, error_code=2, request_code=151, minor_code=3
+[GFX1-]: glxtest: process failed (exited with status 1)
+1636421769877	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofileAUu1u3/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59341/devtools/browser/41f69083-d79b-4b3a-935c-a9d4ece6302a
+1636421771197	Marionette	INFO	Listening on port 44097
+1636421771271	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1636421775931	Marionette	INFO	Stopped listening on port 44097
+1636421776438	geckodriver	INFO	Listening on 127.0.0.1:44105
+1636421776942	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "48465" "-no-remote" "-profile" "/tmp/rust_mozprofilePP0luG"
+[GFX1-]: glxtest: libEGL initialize failed
+[GFX1-]: glxtest: X error, error_code=2, request_code=151, minor_code=3
+[GFX1-]: glxtest: process failed (exited with status 1)
+1636421777761	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilePP0luG/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:48465/devtools/browser/34997ac7-7549-441a-89fd-052e8d3c3928
+1636421779009	Marionette	INFO	Listening on port 38837
+1636421779065	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1636421785364	Marionette	INFO	Stopped listening on port 38837
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1636421785860	geckodriver	INFO	Listening on 127.0.0.1:51123
+1636421785864	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "--marionette" "--remote-debugging-port" "51309" "-no-remote" "-profile" "/tmp/rust_mozprofilepNR0Wo"
+[GFX1-]: glxtest: libEGL initialize failed
+[GFX1-]: glxtest: X error, error_code=2, request_code=151, minor_code=3
+[GFX1-]: glxtest: process failed (exited with status 1)
+1636421786700	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at /tmp/rust_mozprofilepNR0Wo/search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51309/devtools/browser/bc8a8b13-afc2-49b2-b91c-25f971db0b6e
+1636421788026	Marionette	INFO	Listening on port 40885
+1636421788120	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1636421808903	Marionette	INFO	Stopped listening on port 40885
