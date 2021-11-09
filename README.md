@@ -1,8 +1,8 @@
 # kaspi_auto_test
 Тесты запускается внутри Docker контейнера
 Для запуска:
-    docker-compose build собирает контейнер
-    docker-compose up запускает
+    «docker-compose build» собирает контейнер
+    «docker-compose up» запускает
 
 Чтобы увидеть запуск тестов реальном времени откройте http://127.0.1.1:4444/ui/index.html#/sessions
   кликайте на сессию пороль secret
